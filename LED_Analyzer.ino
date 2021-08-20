@@ -15,6 +15,9 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+// Modified 19 Aug 2021 by Roger Banks
+// Updated code to work with latest version of Wire.h 
+
 #include <Wire.h>
 
 #define MCP4725_ADDRESS 0x60
