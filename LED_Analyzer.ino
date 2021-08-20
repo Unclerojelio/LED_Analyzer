@@ -34,9 +34,9 @@ void loop() {
   char startByte = '!';
   
   Wire.beginTransmission(MCP4725_ADDRESS);
-  Wire.send(MCP4725_PROGRAM);
-  Wire.send(0x0);
-  Wire.send(0x0);
+  Wire.write(MCP4725_PROGRAM);
+  Wire.write(0x0);
+  Wire.write(0x0);
   Wire.endTransmission();
  
   if (Serial.available() > 0){
@@ -58,9 +58,9 @@ void runTest() {
   for (unsigned int i = 0; i < VOLTAGE_RANGE; i++){
 
     Wire.beginTransmission(MCP4725_ADDRESS);
-    Wire.send(MCP4725_PROGRAM);
-    Wire.send((unsigned char)((i & 0xFF0) >> 4));
-    Wire.send((unsigned char)((i & 0xF) << 4));
+    Wire.write(MCP4725_PROGRAM);
+    Wire.write((unsigned char)((i & 0xFF0) >> 4));
+    Wire.write((unsigned char)((i & 0xF) << 4));
     Wire.endTransmission();
 
     delay(1);
@@ -83,20 +83,16 @@ void Blink() {
   for (unsigned char i = 0; i < 3; i++){
 
     Wire.beginTransmission(MCP4725_ADDRESS);
-    Wire.send(MCP4725_PROGRAM);
-    Wire.send(0x7F);
-    Wire.send(0x0);
+    Wire.write(MCP4725_PROGRAM);
+    Wire.write(0x7F);
+    Wire.write(0x0);
     Wire.endTransmission();
     delay(200); 
     Wire.beginTransmission(MCP4725_ADDRESS);
-    Wire.send(MCP4725_PROGRAM);
-    Wire.send(0x0);
-    Wire.send(0x0);
+    Wire.write(MCP4725_PROGRAM);
+    Wire.write(0x0);
+    Wire.write(0x0);
     Wire.endTransmission();
     delay(200);
   }
 }
-
-
-
-
