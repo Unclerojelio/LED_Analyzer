@@ -214,9 +214,6 @@ def createPlot(currentDataList, voltageDataList):
     xl = plt.xlabel('LED Current')
     yl = plt.ylabel('LED Voltage')
 
-    #plt.legend((plot1,plot2),['LED Forward Current Measured Characteristics\n','Exponential Fit:\n $ I = %0.3g e^{%0.2fV} $' % (A,B)])
-    #plt.legend((plot1, plot2), ('LED Forward Current Measured Characteristics', 'Exponential Fit:'))
-    #plt.legend()
     plt.legend([plot1, plot2], ['LED Forward Current Measured Characteristics', 'Exponential Fit:\n $ I = %0.3g e^{%0.2fV} $' % (A,B)])
     plt.show()
 
